@@ -2,7 +2,6 @@ package com.luv2code.ecommerce.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 
@@ -31,5 +30,9 @@ public class Address {
 
     @Column(name = "zipCode")
     private String zipCode;
+
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Order order;
 
 }
